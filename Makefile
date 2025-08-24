@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := switch
+PROJECT_NAME := garage_door_opener
 PROJECT_VER := 1.0
 
 # Add RainMaker components and other common application components

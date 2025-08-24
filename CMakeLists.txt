@@ -13,4 +13,4 @@ set(EXTRA_COMPONENT_DIRS ${RMAKER_PATH}/examples/common)
 
 set(PROJECT_VER "1.0")
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(garage_door_opener)
+project(ESP32_Dual_Garage_Door_Opener)
