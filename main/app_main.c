@@ -44,14 +44,14 @@ esp_rmaker_device_t *door2_device;
 static void printReadyBanner(void)
 {
     ESP_LOGI(TAG, "***************************************************************************");
-    ESP_LOGI(TAG, "***                                                                       ***");
-    ESP_LOGI(TAG, "***                    GARAGE DOOR OPENER READY!                          ***");
-    ESP_LOGI(TAG, "***                                                                       ***");
+    ESP_LOGI(TAG, "***                                                                     ***");
+    ESP_LOGI(TAG, "***                    GARAGE DOOR OPENER READY!                        ***");
+    ESP_LOGI(TAG, "***                                                                     ***");
     ESP_LOGI(TAG, "***  ✅ WiFi Connected     ✅ MQTT Connected     ✅ RainMaker Ready      ***");
     ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 19    ✅ Door 2: GPIO 21    ✅ App Control Active   ***");
-    ESP_LOGI(TAG, "***                                                                       ***");
-    ESP_LOGI(TAG, "***  Use ESP RainMaker app to control your garage doors remotely!         ***");
-    ESP_LOGI(TAG, "***                                                                       ***");
+    ESP_LOGI(TAG, "***                                                                     ***");
+    ESP_LOGI(TAG, "***  Use ESP RainMaker app to control your garage doors remotely!       ***");
+    ESP_LOGI(TAG, "***                                                                     ***");
     ESP_LOGI(TAG, "***************************************************************************");
 }
 
