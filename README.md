@@ -214,8 +214,8 @@ For detailed testing instructions, see [test_instructions.md](test_instructions.
 
 ### ESP32 Development Board:
 - **ESP32-C6**: Tested and verified (primary development platform)
-- **ESP32-WROOM-32D**: Compatible (GPIO 18/19 available)
-- **ESP32-S3-WROOM-1**: Compatible (GPIO 18/19 available)
+- **ESP32-WROOM-32D**: Compatible (GPIO 15/19 available)
+- **ESP32-S3-WROOM-1**: Compatible (GPIO 15/19 available)
 
 ### Power Supply:
 - **USB Power**: Works directly for development and testing
@@ -245,7 +245,7 @@ For detailed testing instructions, see [test_instructions.md](test_instructions.
 
 ## Usage Instructions
 
-1. **Hardware Setup**: Connect relays to GPIO 18 and 19
+1. **Hardware Setup**: Connect relays to GPIO 15 and 19
 2. **Power Supply**: Use USB for development or external 5V with 1.5F supercapacitor
 3. **Build**: Run `./build.sh` or `idf.py build`
 4. **Flash**: Run `./build.sh flash-monitor`

@@ -10,15 +10,15 @@
    - **Supercapacitor**: 1.5F, 5.5V or higher rating
 
 ### GPIO Testing:
-1. Connect relays to GPIO 18 and GPIO 19
+1. Connect relays to GPIO 15 and GPIO 19
 2. Power up the ESP32-C6
 3. Monitor serial output for startup messages
 
 ## GPIO Testing
 
-### Door 1 (GPIO 18):
+### Door 1 (GPIO 15):
 - Trigger Door 1 from RainMaker app
-- Verify GPIO 18 goes LOW for 0.5 seconds
+- Verify GPIO 15 goes LOW for 0.5 seconds
 - Verify relay 1 activates
 
 ### Door 2 (GPIO 19):
@@ -30,7 +30,7 @@
 
 Expected messages when doors are triggered:
 ```
-I (xxxx) app_driver: Door 1: Starting pulse (GPIO 18 LOW for 500 ms)
+I (xxxx) app_driver: Door 1: Starting pulse (GPIO 15 LOW for 500 ms)
 I (xxxx) app_driver: Door 1: Pulse completed, reported OFF to RainMaker
 
 I (xxxx) app_driver: Door 2: Starting pulse (GPIO 19 LOW for 500 ms)

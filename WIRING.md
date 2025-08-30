@@ -2,7 +2,7 @@
 
 | ESP32 Pin | Relay Module Pin | Description |
 |-----------|------------------|-------------|
-| GPIO 18   | IN1              | Control signal for Door 1 |
+| GPIO 15   | IN1              | Control signal for Door 1 |
 | GPIO 19   | IN2              | Control signal for Door 2 |
 | 5V/3.3V   | VCC              | Power supply (check relay module specs) |
 | GND       | GND              | Common ground |

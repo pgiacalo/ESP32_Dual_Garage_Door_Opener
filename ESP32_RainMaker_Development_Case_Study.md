@@ -301,8 +301,8 @@ set(PROJECT_NAME "garage_door_opener")
 
 ### **Hardware Compatibility:**
 - **ESP32-C6:** Tested and working (primary development platform)
-- **ESP32-WROOM-32D:** Compatible (GPIO 18/19 available)
-- **ESP32-S3-WROOM-1:** Compatible (GPIO 18/19 available)
+- **ESP32-WROOM-32D:** Compatible (GPIO 15/19 available)
+- **ESP32-S3-WROOM-1:** Compatible (GPIO 15/19 available)
 - **Relay modules:** Standard 5V normally open relays
 - **Power supply:** USB or external 5V supply with 1.5F supercapacitor for ESP32-C6
 
@@ -426,7 +426,7 @@ gpio_set_level(GARAGE_DOOR_1_GPIO, 1);
 
 ### **2. GPIO Pin Selection:**
 
-#### **Chosen Pins (GPIO 18, 19):**
+#### **Chosen Pins (GPIO 15, 19):**
 - **ESP32-C6:** Available and well-documented (primary platform)
 - **ESP32-WROOM-32D:** Available and well-documented
 - **ESP32-S3-WROOM-1:** Compatible with same pins
