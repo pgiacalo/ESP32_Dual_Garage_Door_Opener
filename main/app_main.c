@@ -32,10 +32,6 @@
 
 #include "app_priv.h"
 
-// GPIO pins for the two garage doors (from app_priv.h)
-#define GARAGE_DOOR_1_GPIO    19
-#define GARAGE_DOOR_2_GPIO    21
-
 static const char *TAG = "app_main";
 esp_rmaker_device_t *door1_device;
 esp_rmaker_device_t *door2_device;
@@ -48,7 +44,7 @@ static void printReadyBanner(void)
     ESP_LOGI(TAG, "***                    GARAGE DOOR OPENER READY!                        ***");
     ESP_LOGI(TAG, "***                                                                     ***");
     ESP_LOGI(TAG, "***  ✅ WiFi Connected     ✅ MQTT Connected     ✅ RainMaker Ready      ***");
-    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 19    ✅ Door 2: GPIO 21    ✅ App Control Active   ***");
+    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 18    ✅ Door 2: GPIO 19    ✅ App Control Active   ***");
     ESP_LOGI(TAG, "***                                                                     ***");
     ESP_LOGI(TAG, "***  Use ESP RainMaker app to control your garage doors remotely!       ***");
     ESP_LOGI(TAG, "***                                                                     ***");

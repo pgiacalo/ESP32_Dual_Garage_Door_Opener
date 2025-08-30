@@ -157,7 +157,7 @@ static void printReadyBanner(void) {
     ESP_LOGI(TAG, "***************************************************************************");
     ESP_LOGI(TAG, "***                    GARAGE DOOR OPENER READY!                          ***");
     ESP_LOGI(TAG, "***  ✅ WiFi Connected     ✅ MQTT Connected     ✅ RainMaker Ready      ***");
-    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 19    ✅ Door 2: GPIO 21    ✅ App Control Active   ***");
+    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 18    ✅ Door 2: GPIO 19    ✅ App Control Active   ***");
     ESP_LOGI(TAG, "***************************************************************************");
 }
 ```
@@ -300,10 +300,11 @@ set(PROJECT_NAME "garage_door_opener")
 ## 🚀 Production Readiness
 
 ### **Hardware Compatibility:**
-- **ESP32-WROOM-32D:** Tested and working
-- **ESP32-S3-WROOM-1:** Compatible (GPIO 19/21 available)
+- **ESP32-C6:** Tested and working (primary development platform)
+- **ESP32-WROOM-32D:** Compatible (GPIO 18/19 available)
+- **ESP32-S3-WROOM-1:** Compatible (GPIO 18/19 available)
 - **Relay modules:** Standard 5V normally open relays
-- **Power supply:** USB or external 5V supply
+- **Power supply:** USB or external 5V supply with 1.5F supercapacitor for ESP32-C6
 
 ### **Software Features:**
 - **OTA updates** enabled
@@ -425,14 +426,15 @@ gpio_set_level(GARAGE_DOOR_1_GPIO, 1);
 
 ### **2. GPIO Pin Selection:**
 
-#### **Chosen Pins (GPIO 19, 21):**
+#### **Chosen Pins (GPIO 18, 19):**
+- **ESP32-C6:** Available and well-documented (primary platform)
 - **ESP32-WROOM-32D:** Available and well-documented
 - **ESP32-S3-WROOM-1:** Compatible with same pins
 - **No conflicts** with boot, flash, or other critical functions
 
 #### **Alternative Pins Considered:**
 - **GPIO 2, 4:** Available but closer to boot/flash pins
-- **GPIO 25, 26:** Available but used by some development boards
+- **GPIO 20, 21:** Available but used by some development boards
 - **GPIO 32, 33:** Available but may have ADC conflicts
 
 ### **3. Relay Configuration Options:**
@@ -446,6 +448,19 @@ gpio_set_level(GARAGE_DOOR_1_GPIO, 1);
 - **Risk:** Fails dangerous (relay closed = continuous activation)
 - **Complexity:** Requires additional safety circuits
 - **Power:** Requires power to maintain safe state
+
+### **5. Power Supply Solutions:**
+
+#### **USB Power (Development):**
+- **Works directly** for development and testing
+- **No additional components** required
+- **Limited to** USB power availability
+
+#### **External 5V DC with Supercapacitor (Production):**
+- **1.5F supercapacitor** across 5V power bus
+- **Provides power stability** during boot and operation
+- **Prevents brownout resets** on ESP32-C6
+- **Required for** reliable external power operation
 
 ### **4. Parameter Update Strategies:**
 

@@ -2,6 +2,8 @@
 
 This project creates an ESP32-based garage door opener using Espressif RainMaker that can control two separate garage doors remotely. The implementation is based on the ESP RainMaker switch example with minimal modifications to follow the established patterns.
 
+**Tested and verified on ESP32-C6 development boards.**
+
 ## 📚 **Important: Complete Development Guide**
 
 **For a comprehensive understanding of this project, including the complete development process, technical decisions, lessons learned, and future enhancements, please read:**
@@ -36,14 +38,14 @@ This case study documents the complete transformation from the Espressif switch 
 ## Hardware Setup
 
 ### GPIO Connections
-- **Door 1**: GPIO 19 (default HIGH, goes LOW for 0.5s when activated)
-- **Door 2**: GPIO 21 (default HIGH, goes LOW for 0.5s when activated)
+- **Door 1**: GPIO 18 (default HIGH, goes LOW for 0.5s when activated)
+- **Door 2**: GPIO 19 (default HIGH, goes LOW for 0.5s when activated)
 - **Boot Button**: GPIO 0 (for local testing and WiFi reset)
 
 ### Relay Wiring
 Connect normally open relays to the GPIO pins:
-- Relay 1: Connect to GPIO 19
-- Relay 2: Connect to GPIO 21
+- Relay 1: Connect to GPIO 18
+- Relay 2: Connect to GPIO 19
 - Each relay should be wired in parallel with the existing garage door pushbutton
 
 **For detailed wiring instructions, see [WIRING.md](WIRING.md)**
@@ -51,8 +53,8 @@ Connect normally open relays to the GPIO pins:
 ## Implementation Details
 
 ### GPIO Configuration
-- **Door 1**: GPIO 19 (configurable in `app_priv.h`)
-- **Door 2**: GPIO 21 (configurable in `app_priv.h`)
+- **Door 1**: GPIO 18 (configurable in `app_priv.h`)
+- **Door 2**: GPIO 19 (configurable in `app_priv.h`)
 - **Boot Button**: GPIO 0 (for local testing)
 
 ### Pulse Timing
@@ -76,7 +78,7 @@ Connect normally open relays to the GPIO pins:
 ### Operation Sequence
 
 1. **Idle State**: 
-   - GPIO 19 and GPIO 21 are HIGH
+   - GPIO 18 and GPIO 19 are HIGH
    - Relays are open (NO contacts disconnected)
    - Garage doors remain in current state
 
@@ -106,8 +108,8 @@ The GPIO pins can be modified in `main/app_priv.h`:
 #### GPIO Pins
 Modify in `main/app_priv.h`:
 ```c
-#define GARAGE_DOOR_1_GPIO    19
-#define GARAGE_DOOR_2_GPIO    21
+#define GARAGE_DOOR_1_GPIO    18
+#define GARAGE_DOOR_2_GPIO    19
 ```
 
 #### Pulse Duration
@@ -208,6 +210,25 @@ For detailed testing instructions, see [test_instructions.md](test_instructions.
 - **Intermittent operation**: Check for loose connections or poor grounding
 - **Wrong door activates**: Verify GPIO pin assignments match relay connections
 
+## Hardware Requirements
+
+### ESP32 Development Board:
+- **ESP32-C6**: Tested and verified (primary development platform)
+- **ESP32-WROOM-32D**: Compatible (GPIO 18/19 available)
+- **ESP32-S3-WROOM-1**: Compatible (GPIO 18/19 available)
+
+### Power Supply:
+- **USB Power**: Works directly for development and testing
+- **External 5V DC**: Requires 1.5F supercapacitor for power stability
+  - **Voltage**: 5V ±5% (4.75V - 5.25V)
+  - **Current**: Minimum 1A, recommended 2A
+  - **Supercapacitor**: 1.5F, 5.5V or higher rating
+
+### Relay Module:
+- **Type**: Dual-channel normally open (NO) relay module
+- **Control Voltage**: 5V or 3.3V (check your module)
+- **Contact Rating**: 10A @ 120V AC (for garage door controller)
+
 ## Platform Compatibility
 
 ### iOS (Working Correctly):
@@ -224,10 +245,11 @@ For detailed testing instructions, see [test_instructions.md](test_instructions.
 
 ## Usage Instructions
 
-1. **Hardware Setup**: Connect relays to GPIO 19 and 21
-2. **Build**: Run `./build.sh` or `idf.py build`
-3. **Flash**: Run `idf.py flash monitor`
-4. **Configure**: Use ESP RainMaker app to provision device
-5. **Control**: Use app to control doors remotely
+1. **Hardware Setup**: Connect relays to GPIO 18 and 19
+2. **Power Supply**: Use USB for development or external 5V with 1.5F supercapacitor
+3. **Build**: Run `./build.sh` or `idf.py build`
+4. **Flash**: Run `./build.sh flash-monitor`
+5. **Configure**: Use ESP RainMaker app to provision device
+6. **Control**: Use app to control doors remotely
 
 This implementation provides a robust, safe, and user-friendly solution for remote garage door control using ESP32 and RainMaker technology.

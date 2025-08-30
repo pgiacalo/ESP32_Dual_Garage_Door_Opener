@@ -10,8 +10,9 @@
 #include <stdbool.h>
 
 // GPIO pins for the two garage doors
-#define GARAGE_DOOR_1_GPIO    19  // First garage door relay control
-#define GARAGE_DOOR_2_GPIO    21  // Second garage door relay control
+// These pins are compatible with both ESP32 (0-33 output range) and ESP32C6 (0-30 output range)
+#define GARAGE_DOOR_1_GPIO    18  // First garage door relay control
+#define GARAGE_DOOR_2_GPIO    19  // Second garage door relay control
 
 // Default states (HIGH = relay open, LOW = relay closed)
 #define DEFAULT_DOOR_1_STATE  true   // HIGH by default
