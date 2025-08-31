@@ -44,7 +44,7 @@ static void printReadyBanner(void)
     ESP_LOGI(TAG, "***                    GARAGE DOOR OPENER READY!                        ***");
     ESP_LOGI(TAG, "***                                                                     ***");
     ESP_LOGI(TAG, "***  ✅ WiFi Connected     ✅ MQTT Connected     ✅ RainMaker Ready      ***");
-    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 18    ✅ Door 2: GPIO 19    ✅ App Control Active   ***");
+    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO %d     ✅ Door 2: GPIO %d     ✅ App Control Active   ***", GARAGE_DOOR_1_GPIO, GARAGE_DOOR_2_GPIO);
     ESP_LOGI(TAG, "***                                                                     ***");
     ESP_LOGI(TAG, "***  Use ESP RainMaker app to control your garage doors remotely!       ***");
     ESP_LOGI(TAG, "***                                                                     ***");
