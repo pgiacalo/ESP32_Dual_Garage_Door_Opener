@@ -61,7 +61,7 @@ This project uses an ESP32 to control two garage doors via a dual-channel relay 
 ## Operation Sequence
 
 1. **Idle State**: 
-   - GPIO 18 and GPIO 19 are HIGH
+   - GPIO 15 and GPIO 19 are HIGH
    - Relays are open (NO contacts disconnected)
    - Garage doors remain in current state
 

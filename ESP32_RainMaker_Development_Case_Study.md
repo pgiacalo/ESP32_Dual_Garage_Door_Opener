@@ -30,8 +30,8 @@
 
 #### **Added:**
 ```c
-#define GARAGE_DOOR_1_GPIO    19
-#define GARAGE_DOOR_2_GPIO    21
+#define GARAGE_DOOR_1_GPIO    15
+#define GARAGE_DOOR_2_GPIO    19
 #define DEFAULT_DOOR_1_STATE  true
 #define DEFAULT_DOOR_2_STATE  true
 #define RELAY_PULSE_DURATION_MS 500
@@ -157,7 +157,7 @@ static void printReadyBanner(void) {
     ESP_LOGI(TAG, "***************************************************************************");
     ESP_LOGI(TAG, "***                    GARAGE DOOR OPENER READY!                          ***");
     ESP_LOGI(TAG, "***  ✅ WiFi Connected     ✅ MQTT Connected     ✅ RainMaker Ready      ***");
-    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 18    ✅ Door 2: GPIO 19    ✅ App Control Active   ***");
+    ESP_LOGI(TAG, "***  ✅ Door 1: GPIO 15    ✅ Door 2: GPIO 19    ✅ App Control Active   ***");
     ESP_LOGI(TAG, "***************************************************************************");
 }
 ```

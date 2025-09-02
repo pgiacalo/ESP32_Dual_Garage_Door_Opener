@@ -38,13 +38,13 @@ This case study documents the complete transformation from the Espressif switch 
 ## Hardware Setup
 
 ### GPIO Connections
-- **Door 1**: GPIO 18 (default HIGH, goes LOW for 0.5s when activated)
+- **Door 1**: GPIO 15 (default HIGH, goes LOW for 0.5s when activated)
 - **Door 2**: GPIO 19 (default HIGH, goes LOW for 0.5s when activated)
 - **Boot Button**: GPIO 0 (for local testing and WiFi reset)
 
 ### Relay Wiring
 Connect normally open relays to the GPIO pins:
-- Relay 1: Connect to GPIO 18
+- Relay 1: Connect to GPIO 15
 - Relay 2: Connect to GPIO 19
 - Each relay should be wired in parallel with the existing garage door pushbutton
 
@@ -53,7 +53,7 @@ Connect normally open relays to the GPIO pins:
 ## Implementation Details
 
 ### GPIO Configuration
-- **Door 1**: GPIO 18 (configurable in `app_priv.h`)
+- **Door 1**: GPIO 15 (configurable in `app_priv.h`)
 - **Door 2**: GPIO 19 (configurable in `app_priv.h`)
 - **Boot Button**: GPIO 0 (for local testing)
 
@@ -78,7 +78,7 @@ Connect normally open relays to the GPIO pins:
 ### Operation Sequence
 
 1. **Idle State**: 
-   - GPIO 18 and GPIO 19 are HIGH
+   - GPIO 15 and GPIO 19 are HIGH
    - Relays are open (NO contacts disconnected)
    - Garage doors remain in current state
 
@@ -98,8 +98,8 @@ Connect normally open relays to the GPIO pins:
 
 The GPIO pins can be modified in `main/app_priv.h`:
 ```c
-#define GARAGE_DOOR_1_GPIO    19
-#define GARAGE_DOOR_2_GPIO    21
+#define GARAGE_DOOR_1_GPIO    15
+#define GARAGE_DOOR_2_GPIO    19
 #define RELAY_PULSE_DURATION_MS  500
 ```
 
@@ -108,7 +108,7 @@ The GPIO pins can be modified in `main/app_priv.h`:
 #### GPIO Pins
 Modify in `main/app_priv.h`:
 ```c
-#define GARAGE_DOOR_1_GPIO    18
+#define GARAGE_DOOR_1_GPIO    15
 #define GARAGE_DOOR_2_GPIO    19
 ```
 
