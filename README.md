@@ -8,7 +8,7 @@ This project creates an ESP32-based garage door opener using Espressif RainMaker
 
 **For a comprehensive understanding of this project, including the complete development process, technical decisions, lessons learned, and future enhancements, please read:**
 
-**[ESP32_RainMaker_Development_Case_Study.md](ESP32_RainMaker_Development_Case_Study.md)**
+**[ESP32_RainMaker_Development_Case_Study.md](docs/ESP32_RainMaker_Development_Case_Study.md)**
 
 This case study documents the complete transformation from the Espressif switch example to this production-ready garage door opener, including:
 - **Complete code changes** and technical implementation
@@ -48,7 +48,7 @@ Connect normally open relays to the GPIO pins:
 - Relay 2: Connect to GPIO 19
 - Each relay should be wired in parallel with the existing garage door pushbutton
 
-**For detailed wiring instructions, see [WIRING.md](WIRING.md)**
+**For detailed wiring instructions, see [WIRING.md](docs/WIRING.md)**
 
 ## Implementation Details
 
@@ -127,7 +127,7 @@ door2_device = esp_rmaker_device_create("Garage Door 2", ESP_RMAKER_DEVICE_SWITC
 
 ## Building and Flashing
 
-**📋 For detailed build instructions, see [BUILD_GUIDE.md](BUILD_GUIDE.md)**
+**📋 For detailed build instructions, see [BUILD_GUIDE.md](docs/BUILD_GUIDE.md)**
 
 ### Quick Start
 1. Set up ESP-IDF v5.5+ environment
@@ -176,11 +176,15 @@ garage_door_opener/
 │   ├── app_driver.c        # GPIO control and pulse logic
 │   ├── app_priv.h          # GPIO definitions and constants
 │   └── Kconfig.projbuild   # Build configuration
+├── docs/
+│   ├── BUILD_GUIDE.md      # Comprehensive build instructions
+│   ├── ESP32_RainMaker_Development_Case_Study.md # Development guide
+│   ├── test_instructions.md # Testing procedures
+│   ├── WIRING.md           # Hardware wiring instructions
+│   └── YOUTUBE_VIDEO_SCRIPT.md # Video content guide
 ├── README.md               # Project documentation
-├── WIRING.md              # Hardware wiring instructions
-├── test_instructions.md   # Testing procedures
-├── build.sh               # Build script
-└── ESP32_RainMaker_Development_Case_Study.md # Development guide
+├── build.sh                # Build script
+└── .gitignore              # Git ignore rules
 ```
 
 ## Key Modifications from Switch Example
@@ -211,7 +215,7 @@ garage_door_opener/
 - **Integration Test**: Test with actual garage door controllers
 
 ### Testing Procedures
-For detailed testing instructions, see [test_instructions.md](test_instructions.md)
+For detailed testing instructions, see [test_instructions.md](docs/test_instructions.md)
 
 ## Troubleshooting
 
